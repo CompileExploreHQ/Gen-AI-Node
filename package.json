@@ -10,6 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@google/genai": "^1.43.0",
     "dotenv": "^17.3.1",
     "openai": "^6.25.0",
     "tiktoken": "^1.0.22"
