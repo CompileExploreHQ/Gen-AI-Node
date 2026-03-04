@@ -10,9 +10,17 @@ const ai = new GoogleGenAI({ apiKey });
 async function main() {
     const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
-        contents: "Explain how AI works in a few words",
+        contents: "Explain how AI works",
+        config: {
+            temperature: 2,
+            systemInstruction: "Explain in few words.",
+            thinkingConfig: {
+                includeThoughts: true,
+                thinkingBudget: 100,
+            },
+        }
     });
-    console.log(response.text);
+    console.log(response.candidates[0].content);
 }
 
 await main();
